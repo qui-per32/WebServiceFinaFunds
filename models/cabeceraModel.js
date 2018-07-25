@@ -1,13 +1,12 @@
 const Mongoose = require('mongoose');
 
-let valorSchema = Mongoose.Schema({
+let cabeceraSchema = Mongoose.Schema({
     tipo: String,
     isin: String,
     nombre: String,
     divisa: String,
     familia: String,
-    cuerpo: []
 });
 
-let valor = Mongoose.model('valor', valorSchema);
+let valor = Mongoose.model('cabeceraModel', cabeceraSchema);
 module.exports = valor;

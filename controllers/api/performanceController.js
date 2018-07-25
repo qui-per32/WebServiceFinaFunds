@@ -7,8 +7,11 @@ class performanceController extends Controller {
         
     }
 calc() {
+    let isin = req.query.isin,
+        dateFrom = req.query.dateFrom,
+        dateTo = req.query.dateTo;
     let calcService = new CalcService();
-    calcService.print();
+    calcService.performance();
 }
 
 

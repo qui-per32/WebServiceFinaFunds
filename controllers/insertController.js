@@ -1,5 +1,5 @@
 var Controller = require('../controllers/controller');
-let CalcService = require('../service/calcService');
+
 let MakeObject = require('../service/makeObject');
 
 var csv = require("fast-csv");
@@ -30,9 +30,11 @@ class insertController extends Controller {
                     delimiter: ";",
 
                 })
-                .on("data", function (data) {
-                    makeObject.extracCab(data);
-                    makeObject.extracCuerpo(data);
+                .on("data", function (row) {
+                    makeObject.extracCab(row);
+                    makeObject.extracCuerpo(row);
+                    
+
                 }).on("end", function () {
                     // console.log(makeObject.getCabecera());
                     // console.log(makeObject.getCuerpo());
@@ -40,6 +42,8 @@ class insertController extends Controller {
 
                     console.log("finalizada carga");
                     resolve([makeObject.getCabecera(), makeObject.getCuerpo(), makeObject.getCuerpoErrores(),makeObject.getNumeroCorrectos()]);
+                   
+
                 });
         });
 
@@ -52,7 +56,7 @@ class insertController extends Controller {
     }
 
     index(data) {
-           console.log(data[3]);
+        //    console.log(data[3]);
         if (data[0].length === 0) {
             console.log("no existe");
             return this.res.render('insert', {

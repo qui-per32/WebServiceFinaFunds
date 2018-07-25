@@ -1,28 +1,31 @@
-<div class="row"> 
-    <div class="col-12">
-        {{#if registros}}
-        <h3>gesitros procesados correctamente: {{registros}} </h3>
-        {{/if}}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            {{#if registros}}
+            <h3>Registros procesados correctamente: {{registros}} </h3>
+            {{/if}}
+        </div>
+    </div>
+    
+    <h3>Errores Encontrados</h3>
+    <div class="row">
+    
+        {{#each errores}}
+        <div class="col-3">
+            <p>{{tipo}} </p>
+        </div>
+        <div class="col-3">
+            <p>{{isin}}</p>
+        </div>
+        <div class="col-3">
+            <p>{{fecha}}</p>
+        </div>
+        <div class="col-3">
+            <p>{{precio}}</p>
+        </div>
+    
+        {{/each}}
+    
     </div>
 </div>
 
-<h3>Errores Encontrados</h3>
-<div class="row">
-
-    {{#each errores}}
-    <div class="col-3">
-        <p>{{tipo}} </p>
-    </div>
-    <div class="col-3">
-        <p>{{isin}}</p>
-    </div>
-    <div class="col-3">
-        <p>{{fecha}}</p>
-    </div>
-    <div class="col-3">
-        <p>{{precio}}</p>
-    </div>
-
-    {{/each}}
-
-</div>
