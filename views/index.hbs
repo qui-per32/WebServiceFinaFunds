@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="panel panel-default">
+                <form method="post" enctype="multipart/form-data" action="/upload" role="form">
+                    <div class="panel-heading">
+                        <strong>Upload files</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group file-preview">
+                            <span class="input-group-btn">
+                                <div class="btn btn-default file-preview-input">
+                                    <span class="fas fa-folder-open"></span>
+                                    <span class="file-preview-input-title">Browse</span>
+                                    <input type="file" accept=".csv" name="file" />
+                                </div>
+                                <button type="submit" class="btn btn-labeled btn-primary">
+                                    <span class="btn-label">
+                                        <i class="fas fa-upload"></i>
+                                    </span>Upload</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 column">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>import file</strong>
+                </div>
+                <div class="panel-body">
+                    <form method="post" enctype="multipart/form-data" action="/insert" role="form">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-labeled btn-primary">
+                            <span class="btn-label">
+                                <i class="fas fa-upload"></i>
+                            </span>import</button>
+                    </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
