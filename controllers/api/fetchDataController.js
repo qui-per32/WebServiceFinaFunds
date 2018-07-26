@@ -14,7 +14,6 @@ class fetchDataController extends Controller {
         let isin = this.req.query.isin;
         let dateFrom = this.req.query.dateFrom;
         let dateTo = this.req.query.dateTo;
-        let precio = [];
 
         return new Promise((resolve, reject) => {
             CuerpoModel.find({
@@ -25,27 +24,15 @@ class fetchDataController extends Controller {
                 },
             }, (err, data) => {
                 if (err) reject(err);
-                let calcService = new CalcService();
-                // console.log(precio);
+                resolve(data)
+                reject('error')
                 
-                
-
-                calcService.resolveDataCalc(isin, dateFrom, dateTo, data)
 
 
 
             })
         })
     }
-
-    // let calcService = new CalcService();
-    // calcService.performance((isin,dateTo,dateFrom)=>{
-
-    // })
-
-
-
-    // this.res.json(dateTo);
 
 }
 module.exports = fetchDataController;

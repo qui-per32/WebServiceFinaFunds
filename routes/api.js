@@ -7,16 +7,16 @@ let CalcService = require('../service/calcService');
 router.get('/performance', (req, res, next) => {
     let fetchDataController = new FetchDataController(req, res, next);
     fetchDataController.fetchData()
-    .then((data) => {
-            // console.log(datos);
-            // res.json(data)
+    .then((datos) => {
+        // console.log(resultado);
+            let calcService = new CalcService();
+            calcService.resolveDataCalc(datos)
+            .then((resultado)=>{
+                res.json(resultado);
+                // this.res.send(resultado);
+            })
           
         })
-        .catch(error => res.json(error));
-    //    let calcService = new CalcService();
-
-    //    calcService.performance();
-    //    calcService.volatility();
 })
 
 module.exports = router;
