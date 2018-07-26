@@ -6,8 +6,8 @@ class calculateController extends Controller {
     }
 
     calculateObject(data) {
-
-    }
+ 
+}
 }
 
 module.exports = calculateController;

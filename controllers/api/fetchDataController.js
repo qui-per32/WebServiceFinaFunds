@@ -9,13 +9,24 @@ class fetchDataController extends Controller {
     }
     fetchData() {
         let isin = this.req.query.isin;
+        let dateFrom = this.req.query.dateFrom;
+        let dateTo = this.req.query.dateTo;
         return new Promise((resolve, reject) => {
             CuerpoModel.find({
-                isin: isin
+                isin: isin,
+                fecha: {
+                    $gt: +dateFrom - 1,
+                    $lt: +dateTo + 1
+                },
             }, (err, data) => {
-                if (err) console.error(err);
-                resolve(data)
-                reject('error')
+                if (err) reject(err);
+                  let calcService = new CalcService();
+             
+                  
+                calcService.resolveDataCalc(data)
+                  
+
+                
             })
         })
     }

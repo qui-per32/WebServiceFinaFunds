@@ -23,7 +23,7 @@ class makeObject {
             })
             cabecera.save(err => {    
                 if (err) console.error(err);
-                console.log("Almacenado");
+                // console.log("Almacenado");
             })
             this.objetoCabecera.push(cabecera);
         }

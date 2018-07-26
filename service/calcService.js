@@ -1,30 +1,36 @@
-class calcService
-{
-    constructor(json){
-        this.json = json;
+class calcService {
+    constructor() {
+        this.result = 0;
+        this.total = 0;
     }
 
-    extractCab(){
-       // for(let i=0;i<this.json.length;i++){
-            //if(this.json[i] =='VA'){
-               // console.log(this.json[0]);
-            //}
-        //}
-    }
 
-    media(){
+
+    resolveDataCalc(data) {
         
-        for(let i=0;i<this.json.length;i++){
+
+        let precioFin = 0;
+        let precioInicio = 0;
+
+        if (data[0].precio){
+            precioInicio = data[0].precio;
 
         }
-        this.json.length
+        if (data[data.length - 1].precio){
+            precioFin = data[data.length - 1].precio;
+        }
+        // data = JSON.parse(JSON.stringify(data))
+        // console.log(data[0].precio,data[0],data[data.length-1]);
+        this.result = precioFin - precioInicio 
+        this.total = this.result / precioInicio;
+        console.log(this.total);
+        
+
     }
 
-    print()
-    {
-        console.log(this.json);
-    }
 
 }
+
+
 
 module.exports = calcService;

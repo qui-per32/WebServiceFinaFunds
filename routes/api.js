@@ -7,11 +7,12 @@ let CalcService = require('../service/calcService');
 router.get('/performance', (req, res, next) => {
     let fetchDataController = new FetchDataController(req, res, next);
     fetchDataController.fetchData()
-    .then((datos) => {
-            let calculateController = new CalculateController(req, res, next);
-            calculateController.calculateObject(datos);
+    .then((data) => {
+            // console.log(datos);
+            // res.json(data)
+          
         })
-        .catch(error => this.res.json(error));
+        .catch(error => res.json(error));
     //    let calcService = new CalcService();
 
     //    calcService.performance();
