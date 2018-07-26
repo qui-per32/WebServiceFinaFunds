@@ -7,5 +7,5 @@ let CuerpoSchema = Mongoose.Schema({
     precio: Number
 });
 
-let valor = Mongoose.model('cuerpoModel', CuerpoSchema);
-module.exports = valor;
+let cuerpo = Mongoose.model('cuerpo', CuerpoSchema);
+module.exports = cuerpo;

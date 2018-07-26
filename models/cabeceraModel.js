@@ -8,5 +8,5 @@ let cabeceraSchema = Mongoose.Schema({
     familia: String,
 });
 
-let valor = Mongoose.model('cabeceraModel', cabeceraSchema);
-module.exports = valor;
+let cabecera = Mongoose.model('cabecera', cabeceraSchema);
+module.exports = cabecera;

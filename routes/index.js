@@ -6,12 +6,7 @@ const InsertController = require('../controllers/insertController');
 let CalcService = require('../service/calcService');
 let uploadService = new UploadService();
 let upload = uploadService.up();
-// var mongoose = require('mongoose');
 
-// var Finametrix = mongoose.model('finametrix');
-// mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost/finametrix');
-// var model = require('../models/userModel');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
