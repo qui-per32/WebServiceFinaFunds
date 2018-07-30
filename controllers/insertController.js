@@ -14,9 +14,7 @@ class insertController extends Controller {
         super(req, res, next);
         this.makeObject = new MakeObject();
         this.stream = fs.createReadStream(csvfile);
-        this.stream.on('ready', () => {
-            console.log("Preparado");
-        })
+        this.stream.on('ready', () => {})
     }
 
     insert() {
@@ -33,30 +31,15 @@ class insertController extends Controller {
                 .on("data", function (row) {
                     makeObject.extracCab(row);
                     makeObject.extracCuerpo(row);
-                    
+
 
                 }).on("end", function () {
-                    // console.log(makeObject.getCabecera());
-                    // console.log(makeObject.getCuerpo());
-                    // console.log(makeObject.getNumeroCorrectos());
-
-                    console.log("finalizada carga");
-                    resolve([makeObject.getCabecera(), makeObject.getCuerpo(), makeObject.getCuerpoErrores(),makeObject.getNumeroCorrectos()]);
-                   
-
+                    resolve([makeObject.getCabecera(), makeObject.getCuerpo(), makeObject.getCuerpoErrores(), makeObject.getNumeroCorrectos()]);
                 });
         });
-
-
-        //stream.pipe(csvStream);
-        // res.json({
-        //     success: "Data imported successfully.",
-        //     status: 200
-        // });
     }
 
     index(data) {
-        //    console.log(data[3]);
         if (data[0].length === 0) {
             console.log("no existe");
             return this.res.render('insert', {
@@ -69,13 +52,13 @@ class insertController extends Controller {
             this.res.render('insert', {
                 registros: datos,
                 errores: errores
-            }) 
+            })
         } else {
-            this.res.render('insert',{
+            this.res.render('insert', {
                 title: 'Finametrix'
             })
         }
-       
+
     }
 
 }

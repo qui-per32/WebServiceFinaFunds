@@ -16,18 +16,13 @@ router.get('/', function (req, res, next) {
 
 router.post('/upload', upload.single('file'), function (req, res, next) {
 
-    let homeController = new HomeController(req, res, next);
-    homeController.upload();
-});
-
-router.post('/insert', function (req, res, next) {
-
     let insertController = new InsertController(req, res, next);
     insertController.insert()
         .then((data) => {
             insertController.index(data);
         })
 });
+
 
 
 module.exports = router;

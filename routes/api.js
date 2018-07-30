@@ -8,12 +8,10 @@ router.get('/performance', (req, res, next) => {
     let fetchDataController = new FetchDataController(req, res, next);
     fetchDataController.fetchData()
     .then((datos) => {
-        // console.log(resultado);
             let calcService = new CalcService();
             calcService.resolveDataCalc(datos)
             .then((resultado)=>{
                 res.json(resultado);
-                // this.res.send(resultado);
             })
           
         })

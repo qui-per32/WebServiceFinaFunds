@@ -46,7 +46,6 @@ class calcService {
 
             result.volatility = Math.sqrt(varianzaTotal)
             resolve(result);
-            // reject('error calculando performance y volavility');
         })
     }
 

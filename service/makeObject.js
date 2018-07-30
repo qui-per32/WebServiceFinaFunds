@@ -55,7 +55,6 @@ class makeObject {
                     });
                 cuerpo.save(err => {
                      if (err) console.error(err);
-                     console.log("Almacenado");
                  })
                 this.sumSubidos++;
                 this.objetoCuerpo.push(cuerpo);

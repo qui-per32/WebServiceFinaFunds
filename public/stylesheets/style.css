@@ -16,4 +16,9 @@
   height: 100px;
   width: 100px;
 }
+
+.uploadStyle {
+  display: flex;
+  justify-content: center;
+}
  
