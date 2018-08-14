@@ -8,7 +8,8 @@ class uploadService {
                 cb(null, "public/files");
             },
             filename: (req, file, cb) => {
-                cb(null, file.fieldname + path.extname(file.originalname));
+                let Name = file.originalname
+                cb(null, Name );
             },
         });
     }

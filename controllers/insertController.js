@@ -1,16 +1,17 @@
-var Controller = require('../controllers/controller');
+let Controller = require('../controllers/controller');
 
 let MakeObject = require('../service/makeObject');
 
-var csv = require("fast-csv");
-var fs = require('fs');
+let csv = require("fast-csv");
+let fs = require('fs');
 
-var csvfile = __dirname + "/../public/files/file.csv";
 
 
 
 class insertController extends Controller {
     constructor(req, res, next) {
+        const filename = req.file.originalname;
+        let csvfile = __dirname + "/../public/files/" + filename;
         super(req, res, next);
         this.makeObject = new MakeObject();
         this.stream = fs.createReadStream(csvfile);
