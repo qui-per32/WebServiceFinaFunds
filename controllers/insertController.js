@@ -42,7 +42,6 @@ class insertController extends Controller {
 
     index(data) {
         if (data[0].length === 0) {
-            console.log("no existe");
             return this.res.render('insert', {
                 title: 'Finametrix'
             });

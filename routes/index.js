@@ -18,7 +18,7 @@ router.post('/upload', upload.single('file'), function (req, res, next) {
 
     let insertController = new InsertController(req, res, next);
     insertController.insert()
-        .then((data) => {
+        .then((data) => {         
             insertController.index(data);
         })
 });

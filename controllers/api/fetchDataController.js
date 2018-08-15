@@ -1,6 +1,5 @@
 const Controller = require('../controller');
 let CuerpoModel = require('../../models/cuerpoModel');
-let CalcService = require('../../service/calcService');
 
 class fetchDataController extends Controller {
     constructor(req, res, next) {
