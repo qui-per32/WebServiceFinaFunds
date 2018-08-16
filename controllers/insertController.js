@@ -10,10 +10,10 @@ let fs = require('fs');
 
 class insertController extends Controller {
     constructor(req, res, next) {
+        super(req, res, next);
+        
         const filename = req.file.originalname;
         let csvfile = __dirname + "/../public/files/" + filename;
-        super(req, res, next);
-        this.makeObject = new MakeObject();
         this.stream = fs.createReadStream(csvfile);
         this.stream.on('ready', () => {})
     }

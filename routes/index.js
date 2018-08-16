@@ -15,7 +15,10 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/upload', upload.single('file'), function (req, res, next) {
-
+    
+    if (req.validationError) {
+        return res.render('fileType');
+    }
     let insertController = new InsertController(req, res, next);
     insertController.insert()
         .then((data) => {         

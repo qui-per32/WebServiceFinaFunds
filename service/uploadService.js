@@ -21,7 +21,8 @@ class uploadService {
            fileFilter: function (req, file, cb) {
                var ext = path.extname(file.originalname);
                if (ext !== '.csv') {
-                   return cb(console.error('Only csv are allowed'))
+                   req.validationError = "Only csv are allowed";
+                   return cb(null, false)
                }
                return cb(null, true)
            }
