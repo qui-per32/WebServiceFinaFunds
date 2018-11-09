@@ -8,7 +8,6 @@ que recoge 3 paremetros: isin, dateFrom y dateTo.
 
 En la peticion get realiza los calculos de performance y volatility.
 
-
 Para que funcione la aplicacion tienes que tener previamente instalado mongodb.
 
-Para arrancar la aplicacion priemero se realiza un npm i para instalar dependencias y luego un npm start.
+Para arrancar la aplicacion priemero se realiza un npm i y despues bower install para instalar dependencias y luego un npm start.
